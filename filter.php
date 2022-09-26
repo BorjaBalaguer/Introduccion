@@ -22,23 +22,17 @@ $contactos = array(
     "telefono" => "638765432", "email" => "norajover@hotmail.com"),
 
     );
-    print_r($contactos);
 
     echo '<br>';
 
         
 
-    $filtrarPor = strtolower($_GET["filtrarPor"] ?? "Pepe");
-
-    
-
-    $filtrados = array_filter($contactos, 
-
-        function($contacto) use ($filtrarPor){
-
-            return strpos(strtolower($contacto["email"]), $filtrarPor) !== FALSE;
-
-        });
-
+    $filtrados = [];
+    $filtrarPor = strtolower($_GET["filtrarPor"] ?? "email");
+    foreach ($contactos as $contacto) {
+        if (strpos(strtolower($contacto["email"]), $filtrarPor) !== FALSE) {
+             $filtrados[] = $contacto;
+    }
+}
     print_r($filtrados);
 ?>
