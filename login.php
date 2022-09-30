@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Deber hacer login primero</p>
+    <p>Debes hacer login primero</p>
 </body>
 </html>
