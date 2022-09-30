@@ -2,10 +2,6 @@
 
     $navigator = ($_SERVER['HTTP_USER_AGENT']);
 
-    if (strpos($navigator, 'Firefox') === FALSE) {
-        echo "Por favor entra con el navegador de Mozilla";
-    }
-
 ?>
 
 <!doctype html>
@@ -23,15 +19,14 @@
 </head>    
 
 <body>
+<?php
+    if (strpos($navigator, 'Firefox') == FALSE) {
+        echo "Por favor entra con el navegador de Mozilla";
+    }else{
+        echo("Te presento mi pagina!");
+    }
 
-<ul>
-    <li><a href='idioma.php?setLanguage=es'>Español</a></li>
-
-    <li><a href='idioma.php?setLanguage=en'>Inglés</a></li>
-
-</ul>
-
-
+?>
 </body>
 
 </html>
